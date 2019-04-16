@@ -72,7 +72,7 @@
                 }, 
                 {
                     "action": "WARN", 
-                    "comment": "Do not user update instructions such as apt-get update alone or in a single line in the Dockerfile", 
+                    "comment": "Do not use update instructions such as apt-get update alone or in a single line in the Dockerfile", 
                     "gate": "dockerfile", 
                     "id": "2f87d4bf-e963-496a-8b3d-ff90bef46014", 
                     "params": [
@@ -93,7 +93,7 @@
                 }, 
                 {
                     "action": "WARN", 
-                    "comment": "Do not user update instructions such as apt-get update alone or in a single line in the Dockerfile", 
+                    "comment": "Do not use update instructions such as apt-get update alone or in a single line in the Dockerfile", 
                     "gate": "dockerfile", 
                     "id": "ea1b1c11-0633-48cc-8afc-92b252f331b3", 
                     "params": [
@@ -114,7 +114,7 @@
                 }, 
                 {
                     "action": "WARN", 
-                    "comment": "Do not user update instructions such as apt-get update alone or in a single line in the Dockerfile", 
+                    "comment": "Do not use update instructions such as apt-get update alone or in a single line in the Dockerfile", 
                     "gate": "dockerfile", 
                     "id": "c5dbe7b8-b48b-4845-beff-069421d9d1ba", 
                     "params": [
