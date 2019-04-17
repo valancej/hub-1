@@ -1,7 +1,7 @@
 {
     "blacklisted_images": [],
-    "description": "Anchore DoD Pathfinder Docker image content checks",
-    "id": "anchore_dod_pathfinder_base",
+    "description": "Anchore DoD Security Docker image content checks",
+    "id": "anchore_dod_security_policies",
     "last_updated": 1555453358,
     "mappings": [
       {
@@ -26,7 +26,7 @@
         ]
       }
     ],
-    "name": "anchore_DoD_pathfinder_base",
+    "name": "anchore_dod_security_policies",
     "policies": [
       {
         "comment": "Anchore DoD Istio Checks",
