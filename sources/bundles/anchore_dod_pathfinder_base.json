@@ -29,9 +29,9 @@
     "name": "anchore_DoD_pathfinder_base",
     "policies": [
       {
-        "comment": "Anchore DoD Itsio Checks",
+        "comment": "Anchore DoD Istio Checks",
         "id": "4a4c701f-05b8-4535-8918-b46e83a5412f",
-        "name": "Itsio Checks",
+        "name": "Istio Checks",
         "rules": [
           {
             "action": "WARN",
