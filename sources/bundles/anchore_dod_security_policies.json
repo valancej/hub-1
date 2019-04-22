@@ -112,7 +112,7 @@
             "params": [
               {
                 "name": "ports",
-                "value": "22"
+                "value": "22,23"
               },
               {
                 "name": "type",
