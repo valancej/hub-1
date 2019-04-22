@@ -34,7 +34,7 @@
         "name": "Istio Checks",
         "rules": [
           {
-            "action": "WARN",
+            "action": "STOP",
             "gate": "passwd_file",
             "id": "5f3dbc73-912b-456f-a293-fc2285c8cdb7",
             "params": [
@@ -46,7 +46,7 @@
             "trigger": "blacklist_userids"
           },
           {
-            "action": "WARN",
+            "action": "STOP",
             "gate": "passwd_file",
             "id": "deebb6b2-b37a-41ca-bc31-e4ecbaeb4316",
             "params": [
@@ -58,7 +58,7 @@
             "trigger": "blacklist_usernames"
           },
           {
-            "action": "WARN",
+            "action": "STOP",
             "gate": "dockerfile",
             "id": "0a70b715-8825-46b8-b185-c91289d067ab",
             "params": [
@@ -82,7 +82,7 @@
         "name": "File Checks",
         "rules": [
           {
-            "action": "WARN",
+            "action": "STOP",
             "comment": "Remove setuid and setgid permissions in the images",
             "gate": "files",
             "id": "41b657bb-86e5-43ba-8f35-18edc3a465f9",
@@ -90,7 +90,7 @@
             "trigger": "suid_or_guid_set"
           },
           {
-            "action": "WARN",
+            "action": "STOP",
             "comment": "Do not store secrets in Dockerfiles",
             "gate": "secret_scans",
             "id": "c0e5e302-764d-4b19-9fbd-5c7b0b558673",
@@ -202,7 +202,7 @@
             "trigger": "instruction"
           },
           {
-            "action": "STOP",
+            "action": "WARN",
             "comment": "Add HEALTHCHECK instruction in your Docker container images to perform the health check on running containers",
             "gate": "dockerfile",
             "id": "64499886-5917-4a41-b18b-7d2d0bdcf12b",
@@ -326,7 +326,7 @@
             "params": [
               {
                 "name": "max_days_since_sync",
-                "value": "2"
+                "value": "15"
               }
             ],
             "trigger": "stale_feed_data"
