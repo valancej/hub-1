@@ -13,6 +13,8 @@
         },
         "name": "default",
         "policy_ids": [
+          "3513cc24-5356-4db4-a9ec-c6193983a87a",
+          "9e616f66-7ba0-40be-8f28-2ec2f57dd915",
           "4a4c701f-05b8-4535-8918-b46e83a5412f",
           "4f3bdc23-175b-4582-8c7d-3a7d8fa32a12",
           "cb417967-266b-4453-bfb6-9acf67b0bee5",
@@ -28,6 +30,98 @@
     ],
     "name": "anchore_dod_security_policies",
     "policies": [
+      {
+        "comment": "Anchore DoD Transfer Protocol Checks",
+        "id": "3513cc24-5356-4db4-a9ec-c6193983a87a",
+        "name": "Transfer Protocol Checks",
+        "rules": [
+          {
+            "action": "WARN",
+            "gate": "dockerfile",
+            "id": "6a6ba35f-5e78-4757-8fa3-fd8c2fbd1665",
+            "params": [
+              {
+                "name": "instruction",
+                "value": "FROM"
+              },
+              {
+                "name": "check",
+                "value": "like"
+              },
+              {
+                "name": "value",
+                "value": "(?i)(\\.*(sftp://|http://|https://|ftp://)\\.*)"
+              }
+            ],
+            "trigger": "instruction"
+          },
+          {
+            "action": "WARN",
+            "gate": "dockerfile",
+            "id": "36aee740-5009-4284-baa3-714e03acfae3",
+            "params": [
+              {
+                "name": "instruction",
+                "value": "COPY"
+              },
+              {
+                "name": "check",
+                "value": "like"
+              },
+              {
+                "name": "value",
+                "value": "(?i)(\\.*(sftp://|http://|https://|ftp://)\\.*)"
+              }
+            ],
+            "trigger": "instruction"
+          },
+          {
+            "action": "WARN",
+            "gate": "dockerfile",
+            "id": "a74f02fa-93f9-4ac3-b5d5-82be40098050",
+            "params": [
+              {
+                "name": "instruction",
+                "value": "ADD"
+              },
+              {
+                "name": "check",
+                "value": "like"
+              },
+              {
+                "name": "value",
+                "value": "(?i)(\\.*(sftp://|http://|https://|ftp://)\\.*)"
+              }
+            ],
+            "trigger": "instruction"
+          }
+        ],
+        "version": "1_0"
+      },
+      {
+        "comment": "Anchore DoD Effective User Checks",
+        "id": "9e616f66-7ba0-40be-8f28-2ec2f57dd915",
+        "name": "User Checks",
+        "rules": [
+          {
+            "action": "STOP",
+            "gate": "dockerfile",
+            "id": "fbe300b9-085b-4648-ba54-00d0b1130ae4",
+            "params": [
+              {
+                "name": "users",
+                "value": "root,docker"
+              },
+              {
+                "name": "type",
+                "value": "blacklist"
+              }
+            ],
+            "trigger": "effective_user"
+          }
+        ],
+        "version": "1_0"
+      },
       {
         "comment": "Anchore DoD Istio Checks",
         "id": "4a4c701f-05b8-4535-8918-b46e83a5412f",
@@ -217,23 +311,6 @@
               }
             ],
             "trigger": "instruction"
-          },
-          {
-            "action": "STOP",
-            "comment": "Create a non-root user for the container in the Dockerfile for the container image",
-            "gate": "dockerfile",
-            "id": "c96bf84d-0e76-435c-a94c-0f556bbaf45f",
-            "params": [
-              {
-                "name": "users",
-                "value": "root,docker"
-              },
-              {
-                "name": "type",
-                "value": "blacklist"
-              }
-            ],
-            "trigger": "effective_user"
           }
         ],
         "version": "1_0"
