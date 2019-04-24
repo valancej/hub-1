@@ -5,6 +5,23 @@
     "last_updated": 1555453358,
     "mappings": [
       {
+        "comment": "Anchore Engine mapping that matches anchore engine images",
+        "id": "e3b98da3-bb39-4670-88c3-3a34685de8a2",
+        "image": {
+          "type": "tag",
+          "value": "engine_u8"
+        },
+        "name": "Anchore Engine",
+        "policy_ids": [
+          "f2de1d56-c7f1-4b5a-92e0-135a27feae45"
+        ],
+        "registry": "*",
+        "repository": "anchore/anchore-engine-betas",
+        "whitelist_ids": [
+          "13x5c9fe-e86c-4b07-94fd-57fd086f1ff6"
+        ]
+      },
+      {
         "comment": "default mapping that matches all registry/repo:tag images",
         "id": "042d5b75-ed9d-4fb7-8d41-ec174102f696",
         "image": {
@@ -689,6 +706,80 @@
           }
         ],
         "name": "DEB SUID Files",
+        "version": "1_0"
+      },
+      {
+        "comment": "Anchore Engine Whitlist",
+        "id": "13x5c9fe-e86c-4b07-94fd-57fd086f1ff6",
+        "items": [
+          {
+            "comment": "whitelist file=/usr/local/lib64/python3.6/site-packages/twisted/test/key.pem.no_trailing_newline",
+            "gate": "secret_scans",
+            "id": "da370e801836e419385f2f300713cf7f",
+            "trigger_id": "d982e16f9ca39c8f4888d662def63166"
+          },
+          {
+            "comment": "whitelist file=/usr/share/doc/perl-Net-SSLeay/examples/server_key.pem",
+            "gate": "secret_scans",
+            "id": "za370e801836e419385f2f300713cf7f",
+            "trigger_id": "37c029dacb6d106367c8fd1b58d66f84"
+          },
+          {
+            "comment": "whitelist file=/usr/share/doc/perl-IO-Socket-SSL/example/simulate_proxy.pl",
+            "gate": "secret_scans",
+            "id": "da370e801836e419385f2f300713cf7z",
+            "trigger_id": "2b185686034f8dd9dea452f404ce4917"
+          },
+          {
+            "comment": "whitelist file=/usr/share/doc/perl-IO-Socket-SSL/certs/server-wildcard.pem",
+            "gate": "secret_scans",
+            "id": "da370e801836e419385ssf300713cf7f",
+            "trigger_id": "c6dbf78cba0a1a4226eacadecb5f3d1f"
+          },
+          {
+            "comment": "whitelist file=/usr/share/doc/perl-IO-Socket-SSL/certs/server-key.pem",
+            "gate": "secret_scans",
+            "id": "da370e801836e419385f2f300713cf7f",
+            "trigger_id": "f73694ba70991f5241a1abbabe994c56"
+          },
+          {
+            "comment": "whitelist file=/usr/share/doc/perl-IO-Socket-SSL/certs/server-key.enc",
+            "gate": "secret_scans",
+            "id": "da370e8re436e419385f2f300713cf7f",
+            "trigger_id": "29afbb70e620baf75f520d7bbc1f9c1a"
+          },
+          {
+            "comment": "whitelist file=/usr/share/doc/perl-IO-Socket-SSL/certs/server2-key.pem",
+            "gate": "secret_scans",
+            "id": "pa370e801836e417aw5f2f300713cf7f",
+            "trigger_id": "f16122b03b29fd120320f93fd83d6b85"
+          },
+          {
+            "comment": "whitelist file=/usr/share/doc/perl-IO-Socket-SSL/certs/proxyca.pem",
+            "gate": "secret_scans",
+            "id": "ua370e801836e419385f2f300713cf7l",
+            "trigger_id": "469464de3f15bbadee09ce303573a04a"
+          },
+          {
+            "comment": "whitelist file=/usr/share/doc/perl-IO-Socket-SSL/certs/client-key.pem",
+            "gate": "secret_scans",
+            "id": "da370e801836e419385f2fuuu713cf7f",
+            "trigger_id": "ff983f0c0aa1704ab33c9837800c5f34"
+          },
+          {
+            "comment": "whitelist file=/usr/share/doc/perl-IO-Socket-SSL/certs/client-key.enc",
+            "gate": "secret_scans",
+            "id": "q9qe0e801836e419385f2f300713cf7f",
+            "trigger_id": "dd60f0ee1e756a3ce132240ab79f6c3e"
+          },
+          {
+            "comment": "whitelist file=/usr/local/lib64/python3.6/site-packages/twisted/test/server.pem",
+            "gate": "secret_scans",
+            "id": "xw370e801836e419385f2f300713cf7l",
+            "trigger_id": "9cedc0b146fb161bbeec00f6212ef205"
+          }
+        ],
+        "name": "Anchore Engine Whitelist",
         "version": "1_0"
       }
     ]
