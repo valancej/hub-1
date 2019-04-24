@@ -13,13 +13,19 @@
         },
         "name": "Anchore",
         "policy_ids": [
-          "f2de1d56-c7f1-4b5a-92e0-135a27feae45"
+          "f2de1d56-c7f1-4b5a-92e0-135a27feae45",
+          "3513cc24-5356-4db4-a9ec-c6193983a87a",
+          "9e616f66-7ba0-40be-8f28-2ec2f57dd915",
+          "4a4c701f-05b8-4535-8918-b46e83a5412f",
+          "4f3bdc23-175b-4582-8c7d-3a7d8fa32a12",
+          "cb417967-266b-4453-bfb6-9acf67b0bee5"
         ],
         "registry": "*",
         "repository": "anchore/*",
         "whitelist_ids": [
           "13x5c9fe-e86c-4b07-94fd-57fd086f1ff6",
-          "19k5c9fe-e86c-4b07-94fd-57fd086f1ffc"
+          "19k5c9fe-e86c-4b07-94fd-57fd086f1ffc",
+          "add5d172-775c-461a-842e-41c87af671dc"
         ]
       },
       {
