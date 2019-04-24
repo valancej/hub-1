@@ -16,7 +16,7 @@
           "f2de1d56-c7f1-4b5a-92e0-135a27feae45"
         ],
         "registry": "*",
-        "repository": "anchore/anchore-engine-betas",
+        "repository": "anchore/*",
         "whitelist_ids": [
           "13x5c9fe-e86c-4b07-94fd-57fd086f1ff6",
           "19k5c9fe-e86c-4b07-94fd-57fd086f1ffc"
