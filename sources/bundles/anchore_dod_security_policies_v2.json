@@ -1,7 +1,7 @@
 {
     "blacklisted_images": [],
     "description": "Anchore DoD Security Docker image content checks",
-    "id": "anchore_dod_security_policies",
+    "id": "anchore_dod_security_policies_v2",
     "last_updated": 1555453358,
     "mappings": [
       {
