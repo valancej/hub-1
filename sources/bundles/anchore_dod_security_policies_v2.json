@@ -5,20 +5,21 @@
     "last_updated": 1555453358,
     "mappings": [
       {
-        "comment": "Anchore Engine mapping that matches anchore engine images",
+        "comment": "Anchore mapping that matches Anchore Engine and Enterprise images",
         "id": "e3b98da3-bb39-4670-88c3-3a34685de8a2",
         "image": {
           "type": "tag",
-          "value": "engine_u8"
+          "value": "*"
         },
-        "name": "Anchore Engine",
+        "name": "Anchore",
         "policy_ids": [
           "f2de1d56-c7f1-4b5a-92e0-135a27feae45"
         ],
         "registry": "*",
         "repository": "anchore/anchore-engine-betas",
         "whitelist_ids": [
-          "13x5c9fe-e86c-4b07-94fd-57fd086f1ff6"
+          "13x5c9fe-e86c-4b07-94fd-57fd086f1ff6",
+          "19k5c9fe-e86c-4b07-94fd-57fd086f1ffc"
         ]
       },
       {
@@ -709,7 +710,7 @@
         "version": "1_0"
       },
       {
-        "comment": "Anchore Engine Whitlist",
+        "comment": "Anchore Engine Whitelist",
         "id": "13x5c9fe-e86c-4b07-94fd-57fd086f1ff6",
         "items": [
           {
@@ -780,6 +781,62 @@
           }
         ],
         "name": "Anchore Engine Whitelist",
+        "version": "1_0"
+      },
+      {
+        "comment": "Anchore Enterprise Whitelist",
+        "id": "19k5c9fe-e86c-4b07-94fd-57fd086f1ffc",
+        "items": [
+          {
+            "comment": "whitelist file=/usr/local/lib64/python3.6/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256.txt",
+            "gate": "secret_scans",
+            "id": "aa370e801836e419385f2f300713cf7f",
+            "trigger_id": "2c55a60ad8c8f54e7fcea489d26ce9b8"
+          },
+          {
+            "comment": "whitelist file=/usr/local/lib64/python3.6/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private.pem",
+            "gate": "secret_scans",
+            "id": "p1370e801836e419385f2f300713cf7f",
+            "trigger_id": "83da51d193cc23e553909e8ffdebeabf"
+          },
+          {
+            "comment": "whitelist file=/usr/local/lib64/python3.6/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_enc_aes128.pem",
+            "gate": "secret_scans",
+            "id": "p1asbe801836e419385f2f300713cf7f",
+            "trigger_id": "c98cfc616b67420894cb43b43df3ec7a"
+          },
+          {
+            "comment": "whitelist file=/usr/local/lib64/python3.6/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_enc_aes192.pem",
+            "gate": "secret_scans",
+            "id": "da370e801836e419385f2f30071pp17f",
+            "trigger_id": "1c35af303349fe9bc917caea33c231f3"
+          },
+          {
+            "comment": "whitelist file=/usr/local/lib64/python3.6/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_enc_aes256_gcm.pem",
+            "gate": "secret_scans",
+            "id": "da370e8ty536e419385f2f300713cf7f",
+            "trigger_id": "72b80dd33199464a1ddfc290915b9b7f"
+          },
+          {
+            "comment": "whitelist file=/usr/local/lib64/python3.6/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_enc_des3.pem",
+            "gate": "secret_scans",
+            "id": "da370e801836e419385f2f1a0713cf7f",
+            "trigger_id": "3bb0deca9013e52205302c5f12f02822"
+          },
+          {
+            "comment": "whitelist file=/usr/local/lib64/python3.6/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_p8.pem ",
+            "gate": "secret_scans",
+            "id": "da370e80wk86e419385f2f300713cf7f",
+            "trigger_id": "4e83b5012cc40d5093fd27593d3a729e"
+          },
+          {
+            "comment": "whitelist file=/usr/local/lib64/python3.6/site-packages/Crypto/SelfTest/PublicKey/test_vectors/ECC/ecc_p256_private_p8_clear.pem",
+            "gate": "secret_scans",
+            "id": "da370e801836e419o7df2f300713cf7f",
+            "trigger_id": "872bdf1a07db3141b2807cbc2e082c80"
+          }
+        ],
+        "name": "Anchore Enterprise Whitelist",
         "version": "1_0"
       }
     ]
