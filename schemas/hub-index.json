@@ -1,0 +1,113 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "Root Schema",
+  "required": [
+    "content",
+    "metadata"
+  ],
+  "properties": {
+    "content": {
+      "$id": "#/properties/content",
+      "type": "array",
+      "title": "Content Schema",
+      "items": {
+        "$id": "#/properties/content/items",
+        "type": "object",
+        "title": "Items Schema",
+        "required": [
+          "description",
+          "digest",
+          "location",
+          "name",
+          "type"
+        ],
+        "properties": {
+          "description": {
+            "$id": "#/properties/content/items/properties/description",
+            "type": "string",
+            "title": "Description Schema",
+            "default": "",
+            "examples": [
+              "Anchore DoD Security Docker image content checks"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "digest": {
+            "$id": "#/properties/content/items/properties/digest",
+            "type": "string",
+            "title": "Digest Schema",
+            "default": "",
+            "examples": [
+              "sha256:9a24a59a88cdd79fd9f6408f73207d592b10bd8e362fa277d2608b5d42b6436b"
+            ],
+            "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+          },
+          "location": {
+            "$id": "#/properties/content/items/properties/location",
+            "type": "string",
+            "title": "Location Schema",
+            "default": "",
+            "examples": [
+              "bundles/anchore_dod_security_policies_v2/sha256:9a24a59a88cdd79fd9f6408f73207d592b10bd8e362fa277d2608b5d42b6436b.json"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/content/items/properties/name",
+            "type": "string",
+            "title": "Name Schema",
+            "default": "",
+            "examples": [
+              "anchore_dod_security_policies_v2"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "type": {
+            "$id": "#/properties/content/items/properties/type",
+            "type": "string",
+            "title": "Type Schema",
+            "default": "",
+            "examples": [
+              "bundle"
+            ],
+            "pattern": "^bundle$"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "$id": "#/properties/metadata",
+      "type": "object",
+      "title": "Metadata Schema",
+      "required": [
+        "digest",
+        "last_updated"
+      ],
+      "properties": {
+        "digest": {
+          "$id": "#/properties/metadata/properties/digest",
+          "type": "string",
+          "title": "Digest Schema",
+          "default": "",
+          "examples": [
+            "sha256:ecd7f53a1d5a980ca96e3cb47df3cde18a07a774b29f19c54eb81dac81574a59"
+          ],
+          "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+        },
+        "last_updated": {
+          "$id": "#/properties/metadata/properties/last_updated",
+          "type": "string",
+          "title": "Last_updated Schema",
+          "default": "",
+          "examples": [
+            "2019-04-24T23:46:14.356161"
+          ],
+          "pattern": "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?$"
+        }
+      }
+    }
+  }
+}

@@ -56,6 +56,9 @@ def process_bundles(source_dir=None, target_dir=None):
 
 def populate_target(source_dir=None, target_dir=None, bundles={}):
 
+    with open("./schemas/hub-index.json", 'r') as FH:
+        manifestschema = jsonref.loads(FH.read())
+
     # create the manifest
     manifest = {
         'metadata': {
@@ -67,6 +70,11 @@ def populate_target(source_dir=None, target_dir=None, bundles={}):
     manifest['content'] = list(bundles.values())
     digest = "{}:{}".format('sha256', hashlib.sha256(json.dumps(manifest['content'], sort_keys=True, indent=4).encode('utf8')).hexdigest())
     manifest['metadata']['digest'] = digest
+
+    # validate the index manifest before proceeding
+    print ("\tValidating generated manifest index ...", end='')
+    jsonschema.validate(manifest, manifestschema)
+    print ("done!")
 
     # prep the target location
     if not target_dir or not source_dir:
@@ -126,9 +134,9 @@ except Exception as err:
 
 # generate target and populate
 try:
-    print ("Populating target...", end='')
+    print ("Populating target...")
     rc = populate_target(source_dir=config.get("ANCHORE_HUB_SOURCEDIR"), target_dir=config.get("ANCHORE_HUB_TARGETDIR"), bundles=bundles)
-    print ("done!")
+    print ("Populating target done!")
 except Exception as err:
     raise Exception("ERROR during target population")
 
